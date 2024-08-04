@@ -1,0 +1,23 @@
+User:
+- Recipes (list of Object: Ingredients)
+- Grocery List
+- Inventory
+
+Object Recipe {
+    String RecipeName
+    List<Ingredient> ingredients
+    Date DateEaten
+}
+
+Object Ingredient {
+    String IngredientName
+    Integer Amount
+    String AmountType
+}
+
+Recipe.Date -- used for determining order
+Ingredient.Name -- from './files/IngredientNames.csv' --> example: Chicken, Ground Beef, Black Beans
+Ingredient.Amount -- will get this from entering recipes --> example: 1.2, 5.0, etc.
+Ingredient.AmountType -- from './files/IngredientAmountTypes.csv' --> example: lbs, oz, tbs, etc. 
+
+Main Color: #b09d92

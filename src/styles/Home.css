@@ -1,0 +1,7 @@
+body {
+  --main-theme-color: #8c7d75;
+  --main-theme-accent: #252525;
+  background-color: var(--main-theme-accent);
+  color: var(--main-theme-color);
+  font-size: 14px;
+}

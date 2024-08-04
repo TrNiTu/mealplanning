@@ -1,0 +1,6 @@
+body {
+  --main-theme-color: #b09d92;
+  --main-theme-accent: #252525;
+  background-color: var(--main-theme-accent);
+  color: var(--main-theme-color)
+}
