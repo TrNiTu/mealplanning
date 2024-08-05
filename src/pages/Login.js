@@ -32,7 +32,7 @@ function Login() {
   return (
     <ChakraProvider>
       <Flex align="center" justify="center" bg="#252525" w="100vw" h="100vh">
-        <GoogleLoginButton title="Login" clickHandler={authenticateUser} />
+        <GoogleLoginButton clickHandler={authenticateUser} />
       </Flex>
     </ChakraProvider>
   );
