@@ -1,7 +1,6 @@
 //import { getAuth, getRedirectResult, GoogleAuthProvider, initializeApp, SignInWithRedirect } from 'firebase/app';
 import * as firebase from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
 
 // TODO: Add SDKs for Firebase products that you want to us
 // https://firebase.google.com/docs/web/setup#available-libraries

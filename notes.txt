@@ -22,6 +22,8 @@ Ingredient.Amount -- will get this from entering recipes --> example: 1.2, 5.0, 
 Ingredient.AmountType -- from './files/IngredientAmountTypes.csv' --> example: lbs, oz, tbs, etc. 
 
 Main Color: #b09d92
+Main Color Dark: #3c3632
+Background Color: #252525
 
 For Inventory screen, items on the list will need to be organized by category by like aisle in store..
 i.e. Category: Dairy

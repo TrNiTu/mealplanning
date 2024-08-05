@@ -1,14 +1,16 @@
 import React from "react";
-import GoogleLoginButton from "../components/LoginButton/LoginButton";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { firebaseAuth } from "../service/Firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { isMobile } from "react-device-detect";
 import { useNavigate } from "react-router-dom";
+
+import GoogleLoginButton from "../components/LoginButton/LoginButton";
 
 import "../styles/Login.css";
 
 function Login() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const authenticateUser = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(firebaseAuth, provider)
@@ -21,7 +23,11 @@ function Login() {
             photoUrl: result._tokenResponse.photoUrl,
           };
           console.log("User verified, sending to Home page");
-          navigate("/Home", { state: { user }});
+          if (isMobile) {
+            navigate("/Mobile/Home", { state: { user } });
+          } else {
+            navigate("/Desktop/Home", { state: { user } });
+          }
         }
       })
       .catch((error) => {

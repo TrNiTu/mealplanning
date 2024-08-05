@@ -8,7 +8,8 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import Home from "./pages/Home";
+import HomeDesktop from "./pages/Desktop/Home";
+import HomeMobile from "./pages/Mobile/Home";
 import Login from "./pages/Login";
 import "./index.css";
 
@@ -17,8 +18,9 @@ root.render(
   <Router>
     <Routes>
       <Route exact path="/" element={<Login />} />
-      <Route exact path="/Home" element={<Home />} />
-      <Route path="*" element={<Navigate to="/Home" />} />
+      <Route exact path="/Desktop/Home" element={<HomeDesktop />} />
+      <Route exact path="/Mobile/Home" element={<HomeMobile />} />
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   </Router>
 );
