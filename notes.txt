@@ -1,18 +1,19 @@
 User:
-- Recipes (list of Object: Ingredients)
-- Grocery List
+- Meals (list of Object: Ingredients)
+- Store List
 - Inventory
 
-Object Recipe {
-    String RecipeName
-    List<Ingredient> ingredients
-    Date DateEaten
+Object Meal {
+    String DocumentId (Name of Recipe)
+    String Account
+    List<Ingredient> Ingredients
+    Date Timestamp
 }
 
 Object Ingredient {
     String IngredientName
     Integer Amount
-    String AmountType
+    String Unit
 }
 
 Recipe.Date -- used for determining order
@@ -21,3 +22,17 @@ Ingredient.Amount -- will get this from entering recipes --> example: 1.2, 5.0, 
 Ingredient.AmountType -- from './files/IngredientAmountTypes.csv' --> example: lbs, oz, tbs, etc. 
 
 Main Color: #b09d92
+
+For Inventory screen, items on the list will need to be organized by category by like aisle in store..
+i.e. Category: Dairy
+
+
+What I need:
+- For Inventory & Store List categories (i.e. Dairy, Breakfast, Perishables, etc.)
+- Current list of meals & recipes
+- Chakra-Icons: 
+    for list item:
+        for edit list item --> editicon OR BsPencil 
+        trashicon OR BsFillTrash3Fill 
+        addicon OR BsPlus
+        for move to store list --> BsCart (bootstrap cart) OR BsCartPlushttps://react-icons.github.io/react-icons/icons/bs/
