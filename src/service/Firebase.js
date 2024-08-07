@@ -1,6 +1,7 @@
 //import { getAuth, getRedirectResult, GoogleAuthProvider, initializeApp, SignInWithRedirect } from 'firebase/app';
-import * as firebase from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import * as firebase from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to us
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -18,6 +19,6 @@ const firebaseConfig = {
   measurementId: "G-HRH84FM83Q"
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+export const firebaseApp = firebase.initializeApp(firebaseConfig);
 export const firebaseAuth = getAuth(firebaseApp);
-export default firebaseApp;
+export const firebaseDb = getFirestore(firebaseApp);
