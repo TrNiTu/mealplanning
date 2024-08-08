@@ -21,9 +21,9 @@ import {
   TRANSPARENT,
 } from "../../service/Constants";
 
-const ListItemDeleteModal = ({ isOpen, itemId, itemName, onClose, onConfirm }) => {
+// DeleteConfirmationModal
+const ListItemSingleDeleteModal = ({ isOpen, itemId, itemName, onClose, onConfirm }) => {
     const handleConfirm = () => {
-        console.log("handle confirm: ", itemId);
         onConfirm(itemId)
     }
   return (
@@ -31,7 +31,7 @@ const ListItemDeleteModal = ({ isOpen, itemId, itemName, onClose, onConfirm }) =
       <ModalOverlay backdropFilter="blur(8px)" />
       <ModalContent bg={MAIN_COLOR_DARK}>
         <ModalHeader alignSelf="center" color={MAIN_COLOR_LIGHT}>
-          DELETE
+          CONFIRM DELETE
         </ModalHeader>
         <ModalBody>
           <Flex textAlign="center" alignItems="center" justifyContent="center">
@@ -49,18 +49,18 @@ const ListItemDeleteModal = ({ isOpen, itemId, itemName, onClose, onConfirm }) =
         <ModalFooter>
           <Flex width="100%" justify="space-around">
             <IconButton
-              _hover={{ bg: MAIN_COLOR, color: MAIN_COLOR_DARK }}
+              _hover={{ bg: "green.800", color: "green.100" }}
               bg={TRANSPARENT}
-              color={MAIN_COLOR}
+              colorScheme="green"
               icon={<BsCheck />}
               onClick={handleConfirm}
               size="sm"
               variant="ghost"
             />
             <IconButton
-              _hover={{ bg: MAIN_COLOR, color: MAIN_COLOR_DARK }}
+              _hover={{ bg: "red.800", color: "red.100" }}
               bg={TRANSPARENT}
-              color={MAIN_COLOR}
+              colorScheme="red"
               icon={<BsX />}
               onClick={onClose}
               size="sm"
@@ -73,4 +73,4 @@ const ListItemDeleteModal = ({ isOpen, itemId, itemName, onClose, onConfirm }) =
   );
 };
 
-export default ListItemDeleteModal;
+export default ListItemSingleDeleteModal;
