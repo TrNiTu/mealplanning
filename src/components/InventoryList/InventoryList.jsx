@@ -28,7 +28,7 @@ import ListItem from "../ListItem/ListItem.jsx";
 import ListItemSingleDeleteModal from "../ListItemDeleteModal/ListItemSingleDeleteModal.jsx";
 import DeleteListItemModal from "../DeleteListItemModal/DeleteListItemModal.jsx";
 import CategorizedList from "../CategorizedList/CategorizedList.jsx";
-import AddItemModal from "../CategorizedList/AddItemModal/AddItemModal.jsx";
+import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 
 const InventoryList = ({ account }) => {
   const [addItemCategoryValidity, setAddItemCategoryValidity] = useState("");

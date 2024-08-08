@@ -20,10 +20,10 @@ import {
   MAIN_COLOR_INPUT,
   MAIN_COLOR_LIGHT,
   TRANSPARENT,
-} from "../../../service/Constants";
+} from "../../service/Constants";
 import { useState, useEffect } from "react";
 
-import ItemStockBadge from "../../ItemStockBadge/InventoryStockBadge";
+import ItemStockBadge from "../ItemStockBadge/InventoryStockBadge";
 
 const AddItemModal = ({
   categoryValidity,
