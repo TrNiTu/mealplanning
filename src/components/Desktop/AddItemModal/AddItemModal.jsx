@@ -1,7 +1,7 @@
 import { BsCheck } from "react-icons/bs";
 import { BiX } from "react-icons/bi";
 import {
-	Box,
+	Divider,
 	Flex,
 	IconButton,
 	Input,
@@ -16,17 +16,16 @@ import {
 import {
 	CATEGORIES,
 	MAIN_COLOR,
-	MAIN_COLOR_BACKGROUND,
 	MAIN_COLOR_DARK,
 	MAIN_COLOR_INPUT,
 	MAIN_COLOR_LIGHT,
 	TRANSPARENT,
-} from "../../service/Constants";
+} from "../../../service/Constants";
 import { useState, useEffect } from "react";
 
-import ItemStockBadge from "../ItemStockBadge/InventoryStockBadge";
+import ItemStockBadge from "../../ItemStockBadge/InventoryStockBadge";
 
-const AddItemModal = ({ isOpen, onClose, onConfirm }) => {
+const AddItemModal = ({ isOpen, item, onClose, onConfirm }) => {
 	// only allow user to save when name, amount, and category are filled
 	// only need to validate amount and category
 	// validate upon saving
@@ -54,10 +53,17 @@ const AddItemModal = ({ isOpen, onClose, onConfirm }) => {
 		}
 	};
 
+	const containsIgnoreCase = (category, input) => {
+		return category.toLowerCase().includes(input.toLowerCase());
+	};
+
 	const handleConfirm = () => {
-		const categoryValidity = CATEGORIES.includes(newItemCategory);
+		const categoryValidity = CATEGORIES.some(
+			(category) => category.toLowerCase() === newItemCategory.toLowerCase()
+		);
 		const nameValidity = newItemName.length > 0;
 		const validity = categoryValidity && nameValidity;
+
 		setIsCategoryValid(categoryValidity);
 		setIsNameValid(nameValidity);
 		setNewItemValidity(validity);
@@ -70,10 +76,10 @@ const AddItemModal = ({ isOpen, onClose, onConfirm }) => {
 	};
 
 	const handleInputChange = (e, inputType) => {
-		if (inputType === "name") {
-			setNewItemName(e.target.value);
-		} else if (inputType === "category") {
+		if (inputType === "category") {
 			setNewItemCategory(e.target.value);
+		} else if (inputType === "name") {
+			setNewItemName(e.target.value);
 		} else {
 			console.error(
 				"Error when handling input change, type " +
@@ -96,6 +102,7 @@ const AddItemModal = ({ isOpen, onClose, onConfirm }) => {
 				<ModalHeader alignSelf="center" color={MAIN_COLOR_LIGHT}>
 					Add Item
 				</ModalHeader>
+				<Divider color={MAIN_COLOR_LIGHT} width="25%" />
 				<ModalBody>
 					<Flex
 						align="center"
@@ -104,7 +111,7 @@ const AddItemModal = ({ isOpen, onClose, onConfirm }) => {
 						justify="space-around"
 					>
 						{/* Text Column */}
-						<Flex align="center" direction="column" flex="1" height="20vh">
+						<Flex align="center" direction="column" flex="1" height="30vh">
 							<Flex align="center" flex="1">
 								<Text color={MAIN_COLOR} fontSize="md">
 									Amount
@@ -121,14 +128,9 @@ const AddItemModal = ({ isOpen, onClose, onConfirm }) => {
 								</Text>
 							</Flex>
 						</Flex>
+
 						{/* Input Column */}
-						<Flex
-							align="center"
-							direction="column"
-							flex="1"
-							height="20vh"
-							justify="center"
-						>
+						<Flex align="center" direction="column" flex="1" height="30vh">
 							<Flex align="center" flex="1">
 								<ItemStockBadge
 									amount={newItemAmount}
@@ -175,7 +177,7 @@ const AddItemModal = ({ isOpen, onClose, onConfirm }) => {
 					</Flex>
 				</ModalBody>
 				<ModalFooter>
-					<Flex width="100%" justify="space-around">
+					<Flex align="center" justify="space-around" width="100%">
 						<IconButton
 							_hover={{ bg: "green.600", color: "green.100 " }}
 							bg={TRANSPARENT}

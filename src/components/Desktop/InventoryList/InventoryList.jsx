@@ -1,14 +1,8 @@
 import { BsPlus, BsCartPlusFill, BsTrash3Fill } from "react-icons/bs";
 import {
-	Accordion,
-	AccordionItem,
-	AccordionButton,
-	AccordionPanel,
-	AccordionIcon,
 	ChakraProvider,
 	Flex,
 	IconButton,
-	Text,
 	Spinner,
 	useToast,
 } from "@chakra-ui/react";
@@ -19,16 +13,10 @@ import {
 	CATEGORIES,
 	CUSTOM_THEME,
 	MAIN_COLOR,
-	MAIN_COLOR_BACKGROUND,
-	MAIN_COLOR_DARK,
-	MAIN_COLOR_LIGHT,
-	TRANSPARENT,
 } from "../../../service/Constants.js";
 
-import ListItem from "../../ListItem/ListItem.jsx";
-import ListItemSingleDeleteModal from "../../ListItemDeleteModal/ListItemSingleDeleteModal.jsx";
-import ListItemModal from "../../ListItemModal/ListItemModal.jsx";
-import CategorizedInventoryList from "../../CategorizedInventoryList/CategorizedInventoryList.jsx";
+import ListItemModal from "../ListItemModal/ListItemModal.jsx";
+import CategorizedInventoryList from "../CategorizedInventoryList/CategorizedInventoryList.jsx";
 // import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 
