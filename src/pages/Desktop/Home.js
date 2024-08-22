@@ -1,25 +1,26 @@
 import React from "react";
-import { Box, ChakraProvider, Flex, Text } from "@chakra-ui/react";
+import { Box, ChakraProvider, Flex } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-// components
-import InventoryList from "../../components/Desktop/InventoryList/InventoryList.jsx";
+// Components
+import InventoryList from "../../components/Desktop/Inventory/InventoryList/InventoryList.jsx";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner.jsx";
-import ScreenTabs from "../../components/ScreenTabs/ScreenTabs.jsx";
+import MealsList from "../../components/Desktop/Meals/MealsList/MealsList.jsx";
+import ScreenTabs from "../../components/Desktop/ScreenTabs/ScreenTabs.jsx";
+import StoreList from "../../components/Desktop/Store/StoreList/StoreList.jsx";
 
-// constants
+// Constants
 import {
-	MAIN_COLOR,
 	MAIN_COLOR_BACKGROUND,
 	SCREEN_TAB_NAMES,
 } from "../../service/Constants.js";
 
-// styles
+// Scripts
+import { getItems } from "../../components/Desktop/Inventory/InventoryList/InventoryList.js";
+
+// Styles
 import "../../styles/Home.css";
-import StoreList from "../../components/Desktop/StoreList/StoreList.jsx";
-import MealsList from "../../components/Desktop/MealsList/MealsList.jsx";
-import { getItems } from "../../components/Desktop/InventoryList/InventoryList.js";
 
 const Home = () => {
 	const [loading, setLoading] = useState(true);
@@ -61,10 +62,6 @@ const Home = () => {
 			navigate("/");
 		}
 	}, [user, loading, navigate]);
-
-	useEffect(() => {
-		// TODO: implement logic to render things based on tab index
-	}, [selectedTabIndex]);
 
 	return (
 		<ChakraProvider bg={MAIN_COLOR_BACKGROUND}>
