@@ -3,7 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 
 import "./LoginButton.css";
 
-const GoogleLoginButton = ({ title, clickHandler }) => {
+const GoogleLoginButton = ({ clickHandler }) => {
   return (
     <Button
       colorScheme="gray"
