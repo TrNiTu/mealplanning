@@ -2,28 +2,34 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Navigate,
 } from "react-router-dom";
 
-import Home from "./pages/Home";
+import HomeDesktop from "./pages/Desktop/Home";
+import HomeMobile from "./pages/Mobile/Home";
+import InventoryMobile from "./pages/Mobile/Inventory";
+import MealsMobile from "./pages/Mobile/Meals";
+import StoreMobile from "./pages/Mobile/Store";
 import Login from "./pages/Login";
+
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Router>
-    <Routes>
-      <Route exact path="/" element={<Login />} />
-      <Route exact path="/Home" element={<Home />} />
-      <Route path="*" element={<Navigate to="/Home" />} />
-    </Routes>
-  </Router>
+	<Router>
+		<Routes>
+			<Route path="/" element={<Login />} />
+			<Route path="/desktop/home" element={<HomeDesktop />} />
+			<Route path="/mobile/home" element={<HomeMobile />} />
+			<Route path="/mobile/inventory" element={<InventoryMobile />} />
+			<Route path="/mobile/meals" element={<MealsMobile />} />
+			<Route path="/mobile/store" element={<StoreMobile />} />
+			<Route path="*" element={<Navigate to="/" />} />
+		</Routes>
+	</Router>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals(console.log);
