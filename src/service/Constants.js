@@ -23,7 +23,7 @@ export const MAIN_COLOR_LIGHT = "#eae2de";
 export const MAIN_COLOR_INPUT = "#323232";
 export const HOVER_COLOR_DARK = "#584a44";
 export const HOVER_COLOR_LIGHT = "#e8dbd3";
-export const SCREEN_TAB_NAMES = ["Inventory", "Meals", "Store List"];
+export const SCREEN_NAMES = ["Inventory", "Meals", "Store List"];
 export const TRANSPARENT = "transparent";
 
 export const CUSTOM_THEME = extendTheme({
@@ -52,21 +52,19 @@ export const CUSTOM_THEME = extendTheme({
 				},
 			},
 		},
-		Progress: {
+		Drawer: {
 			baseStyle: {
-				filledTrack: {
-					bg: MAIN_COLOR_INPUT,
+				dialog: {
+					bg: MAIN_COLOR_BACKGROUND,
 					color: MAIN_COLOR,
 				},
-			},
-		},
-		CircularProgress: {
-			baseStyle: {
-				track: {
-					stroke: MAIN_COLOR_BACKGROUND, // Background color of the CircularProgress track
+				footer: {
+					bg: MAIN_COLOR_BACKGROUND,
+					color: MAIN_COLOR,
 				},
-				filledTrack: {
-					stroke: MAIN_COLOR, // Color of the filled portion of the CircularProgress
+				header: {
+					bg: MAIN_COLOR_BACKGROUND,
+					color: MAIN_COLOR_LIGHT,
 				},
 			},
 		},

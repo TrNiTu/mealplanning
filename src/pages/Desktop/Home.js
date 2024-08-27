@@ -13,11 +13,12 @@ import StoreList from "../../components/Desktop/Store/StoreList/StoreList.jsx";
 // Constants
 import {
 	MAIN_COLOR_BACKGROUND,
-	SCREEN_TAB_NAMES,
+	SCREEN_NAMES,
 } from "../../service/Constants.js";
 
 // Scripts
 import { getItems } from "../../components/Desktop/Inventory/InventoryList/InventoryList.js";
+import { getListItems, getMeals } from "../../service/Firebase.js";
 
 // Styles
 import "../../styles/Home.css";
@@ -70,14 +71,14 @@ const Home = () => {
 					align="center"
 					bg={MAIN_COLOR_BACKGROUND}
 					direction="column"
-					maxWidth="100vw"
 					height="100vh"
+					maxWidth="100vw"
 					overflowX="hidden"
 				>
 					<Box>
 						<ScreenTabs
 							setSelectedTabIndex={setSelectedTabIndex}
-							screenTabNames={SCREEN_TAB_NAMES}
+							screenTabNames={SCREEN_NAMES}
 						/>
 					</Box>
 					{/* // post-login user is verified, conditional rendering based on selected tab */}

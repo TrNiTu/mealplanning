@@ -1,6 +1,11 @@
 import React from "react";
 import { ChakraProvider, Flex } from "@chakra-ui/react";
-import { firebaseAuth } from "../service/Firebase";
+import {
+	firebaseAuth,
+	getListItems,
+	getMeals,
+	getUserDocs,
+} from "../service/Firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { isMobile } from "react-device-detect";
 import { useNavigate } from "react-router-dom";
@@ -22,11 +27,11 @@ function Login() {
 						firstName: result._tokenResponse.firstName,
 						photoUrl: result._tokenResponse.photoUrl,
 					};
-					console.log("User verified, sending to Home page");
 					if (1) {
-						navigate("/Mobile/Home", { state: { user } });
+						// change 1 back to isMobile, also need to pass in user items & meals
+						navigate("/mobile/inventory", { state: { user } });
 					} else {
-						navigate("/Desktop/Home", { state: { user } });
+						navigate("/desktop/home", { state: { user } });
 					}
 				}
 			})
